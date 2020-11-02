@@ -1,2 +1,2 @@
-# pos_margin
- point of sale margin
+# pos_profit
+ point of sale profit
