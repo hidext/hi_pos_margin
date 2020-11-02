@@ -7,7 +7,7 @@ from odoo import api, fields, models, tools
 class PosOrderReport(models.Model):
     _inherit = "report.pos.order"
 
-    margin = fields.Float(string='Margin')
+    profit = fields.Float(string='Profit')
     turnover = fields.Float('Turnover')
 
     def _select(self):
@@ -18,7 +18,7 @@ class PosOrderReport(models.Model):
                 s.date_order AS date,
                 SUM(l.qty) AS product_qty,
                 SUM(l.qty * l.price_unit) AS price_sub_total,
-                SUM(l.margin) AS margin,
+                SUM(l.profit) AS profit,
                 SUM((l.qty * l.price_unit) * (100 - l.discount) / 100) AS price_total,
                 SUM((l.qty * l.price_unit) * (l.discount / 100)) AS total_discount,
                 (SUM(l.qty*l.price_unit)/SUM(l.qty * u.factor))::decimal AS average_price,
