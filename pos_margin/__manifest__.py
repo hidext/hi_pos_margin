@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Hidext. See LICENSE file for full copyright and licensing details.
 {
-    "name" : "POS Margin and Analysis",
+    "name" : " Margin and Analysis POS",
     "version" : "12.0.0.2",
     "depends" : ['base','point_of_sale'],
     "author": "Hidext",
