@@ -2,7 +2,7 @@
 # Part of Hidext. See LICENSE file for full copyright and licensing details.
 {
     "name" : "POS Margin and Analysis",
-    "version" : "12.0.0.3",
+    "version" : "12.0.0.2",
     "depends" : ['base','point_of_sale'],
     "author": "Hidext",
     "summary": "Margin calculation on POS backend Order based on product and visible on analysis report",
