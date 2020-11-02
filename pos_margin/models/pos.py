@@ -10,28 +10,28 @@ import odoo.addons.decimal_precision as dp
 
 class PosOrder(models.Model):
     _inherit ='pos.order'
-    margin = fields.Float(compute='_product_margin',digits=dp.get_precision('Product Price'), string="Margin")
+    profit = fields.Float(compute='_product_profit',digits=dp.get_precision('Product Price'), string="Profit")
 
-    @api.depends('lines.margin')
-    def _product_margin(self):
+    @api.depends('lines.profit')
+    def _product_profit(self):
         for order in self:
-            order.margin = sum(order.lines.mapped('margin'))
+            order.profit = sum(order.lines.mapped('profit'))
             
 class PosOrderLine(models.Model):
     _inherit ='pos.order.line'   
         
-    purchase_price = fields.Float(string='Cost', compute='product_id_change_margin', digits=dp.get_precision('Product Price'), store=True)
-    margin = fields.Float(compute='_product_margin', digits=dp.get_precision('Product Price'), store=True)
+    purchase_price = fields.Float(string='Cost', compute='product_id_change_profit', digits=dp.get_precision('Product Price'), store=True)
+    profit = fields.Float(compute='_product_profit', digits=dp.get_precision('Product Price'), store=True)
 
     @api.depends('product_id')
-    def product_id_change_margin(self):
+    def product_id_change_profit(self):
         for line in self:
             line.purchase_price = line.product_id.standard_price
         return
 
     @api.depends('product_id', 'purchase_price', 'price_unit')
-    def _product_margin(self):
+    def _product_profit(self):
         for line in self:
             # print("lineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",line)
-            line.margin = line.price_subtotal_incl - ((line.purchase_price or line.product_id.standard_price) * line.qty)
+            line.profit = line.price_subtotal_incl - ((line.purchase_price or line.product_id.standard_price) * line.qty)
 
