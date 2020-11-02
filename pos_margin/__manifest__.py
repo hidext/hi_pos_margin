@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 # Part of Hidext. See LICENSE file for full copyright and licensing details.
 {
-    "name" : " Margin and Analysis POS",
+    "name" : " POS Profit and Analysis ",
     "version" : "12.0.0.4",
     "depends" : ['base','point_of_sale'],
     "author": "Hidext",
-    "summary": "Margin calculation on POS backend Order based on product and visible on analysis report",
+    "summary": "Profit calculation on POS backend Order based on product and visible on analysis report",
     "description": """
 	Hidext developed a new odoo/OpenERP module apps.
-	This module use for calculate margin on product margin on pos margin on point of sale. 
-    Shows total margin on POS orders. also shows margin on POS order line. 
-    odoo Calculate margin on percentage and fixed Margin Analysis Margin on Product POS and Invoice
-    odoo product margin pos margin pos order margin pos backend margin. 
-    odoo pos invoice margin point of sale invoice margin
-    odoo invoice margin on pos
-    odoo invoice margin on point of sale sales margin
-    odoo pos sales commission pos commission pos total margin margin field on pos 
-    odoo pos margin field pos margin amount margin amount on pos margin amount on point of sale margin report
-    odoo pos margin anaysis report
+	This module use for calculate profit on product profit on pos profit on point of sale. 
+    Shows total profit on POS orders. also shows profit on POS order line. 
+    odoo Calculate profit on percentage and fixed profit Analysis Profit on Product POS and Invoice
+    odoo product profit pos profit pos order profit pos backend profit. 
+    odoo pos invoice profit point of sale invoice profit
+    odoo invoice profit on pos
+    odoo invoice profit on point of sale sales profit
+    odoo pos sales commission pos commission pos total profit profit field on pos 
+    odoo pos profit field pos profit amount profit amount on pos profit amount on point of sale profit report
+    odoo pos profit anaysis report
 
 Este módulo usa para calcular margem no produto, margem na posição, margem no ponto de venda. Mostra a margem total em pedidos POS.
 também mostra margem na linha de pedido do PDV. Calcular a margem em porcentagem e fixo.Análise de margem, margem no produto, PDV e fatura
